@@ -28,7 +28,7 @@ CmakeLists.txt          ---> Build Script
 README.md               ---> The information you wanna tell users.
 
  ```
-## 1. Write your feature.
+## 1. Write your feature
 - This library has one simple function that prints some text when called.
 ```
 /* yourlib/lib/yourlib.c */
@@ -40,7 +40,7 @@ void yourlib_test_function()
 ```
 
 
-## 2. Make header which will used by library users.
+## 2. Make header which will used by library users
 ```
 /* yourlib/include/yourlib.h */
 #ifndef YOURLIB_H
@@ -52,7 +52,7 @@ void yourlib_test_function();
 ```
 
 
-## 3. Build library.
+## 3. Build library
  - We will use cmake for build this library.
  - yourlib/CMakeLists.txt
 ```
@@ -68,7 +68,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address")
 add_subdirectory(lib)
 ```
 
- - yourlib/llb/CMakeLists.txt
+ - yourlib/lib/CMakeLists.txt
 add_library(yourlib yourlib.c)
 
 target_include_directories(yourlib PUBLIC
@@ -85,7 +85,7 @@ cmake ..
 make
 ```
 
-## 4. Write testapp.
+## 4. Write testapp
 ```
 /* yourlib/apps/sample.c */
 #include "yourlib.h"
@@ -97,7 +97,7 @@ int main()
 }
 ```
 
-## 5. Build testapp and link with your library.
+## 5. Build testapp and link with your library
 
  - yourlib/CMakeLists.txt (Append)
 ```
@@ -106,8 +106,8 @@ add_subdirectory(apps)
 
 - yourlib/apps/CMakeLists.txt
 ```
-add_executable(sample linktest/linktest.c)
-target_link_libraries(sample boilerplatelib)
+add_executable(sample sample.c)
+target_link_libraries(sample yourlib)
 target_include_directories(sample PUBLIC "${PROJECT_SOURCE_DIR}/include")
 ```
 
@@ -120,7 +120,7 @@ cmake ..
 make
 ```
 
-## 6. Execute Testapp.
+## 6. Execute Testapp
 
 ```
 #!bin/bash
