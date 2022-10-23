@@ -70,7 +70,7 @@ endif
  - Now we can build the driver.
  - Note that you should not just type make. You should tell them which cross-compiler to use.
 ```
- - make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
+ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
 ```
  - If everything works fine, then __your_driver_name.ko file will be generated at your working directory.
 
@@ -78,13 +78,12 @@ endif
  - Move your ko file to device.
  - In this post, I will use scp to move file as my deivce is connected with LAN.
  ```
- - scp __your_driver_name.ko root@192.168.1.105:~/
+ scp __your_driver_name.ko root@192.168.1.105:~/
  ```
 
  - See if your driver can be insmod/rmmod.
  ```
- - insmod __your_driver_name.ko
- - rmmod __your_driver_name
- - dmesg
+ insmod __your_driver_name.ko
+ rmmod __your_driver_name
+ dmesg
  ```
- 
