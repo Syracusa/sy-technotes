@@ -69,13 +69,14 @@ add_subdirectory(lib)
 ```
 
  - yourlib/lib/CMakeLists.txt
+ ```
 add_library(yourlib yourlib.c)
 
 target_include_directories(yourlib PUBLIC
                           "${PROJECT_BINARY_DIR}"
                           "${PROJECT_SOURCE_DIR}/lib/"
                           ) 
-
+```
 
  - Commands to build
 ```
