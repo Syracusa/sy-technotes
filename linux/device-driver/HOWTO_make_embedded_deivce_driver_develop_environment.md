@@ -1,7 +1,6 @@
 # HOWTO : Make embedded device driver develop environment
  - This post explain how to make embedded device driver develop environment.
  - I'll show you how to make basic device driver of Beaglebone black.
-```
 ## Table of contents
 1. Get kernel for your device.
  - First, you should get kernel that used in your device. 
