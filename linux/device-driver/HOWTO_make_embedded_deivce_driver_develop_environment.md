@@ -3,6 +3,12 @@
  - I'll show you how to make basic device driver of Beaglebone black.
 ## Table of contents
 1. Get kernel for your device.
+2. Install cross-compiler. 
+3. Write driver code.
+4. Write makefile.
+5. Test driver.
+
+## 1. Get kernel for your device.
  - First, you should get kernel that used in your device. 
  ```
  git clone https://github.com/beagleboard/linux
@@ -10,7 +16,7 @@
  git checkout 4.19.94-ti-r42 # Checkout to your device's kernel version
  ```
 
-2. Install cross-compiler. 
+## 2. Install cross-compiler. 
  - Embedded device like beaglebone black, is mostly not use same architecture of your PC. The binary is required to compiled by their architecture specific compiler.
 ```
 sudo apt-get update
@@ -21,7 +27,7 @@ sudo apt-get install gcc-arm-linux-gnueabihf
  arm-linux-gnueabi-gcc --version
 ```
 
-3. Write driver code.
+## 3. Write driver code.
  - Very simple device driver code that do nothing.
 ```
 /* __your_driver_name.c */
@@ -44,7 +50,7 @@ static int __your_driver_name_init(void)
 module_init(__your_driver_name_init);
 module_exit(__your_driver_name_exit);
 ```
-4. Write makefile.
+## 4. Write makefile.
  - Makefile
 ```
 
@@ -68,7 +74,7 @@ endif
 ```
  - If everything works fine, then __your_driver_name.ko file will be generated at your working directory.
 
-5. Test driver.
+## 5. Test driver.
  - Move your ko file to device.
  - In this post, I will use scp to move file as my deivce is connected with LAN.
  ```
@@ -81,3 +87,4 @@ endif
  - rmmod __your_driver_name
  - dmesg
  ```
+ 
