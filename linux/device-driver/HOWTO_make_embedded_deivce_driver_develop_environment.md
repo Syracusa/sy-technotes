@@ -1,9 +1,7 @@
 # HOWTO : Make embedded device driver develop environment
+ - This post explain how to make embedded device driver develop environment.
+ - I'll show you how to make basic device driver of Beaglebone black.
 ```
- This post explain how to make embedded device driver develop environment.
- In this post, I'll show you how to make basic device driver of Beaglebone black.
-```
-
 ## Table of contents
 1. Get kernel for your device.
  - First, you should get kernel that used in your device. 
@@ -25,7 +23,7 @@ sudo apt-get install gcc-arm-linux-gnueabihf
 ```
 
 3. Write driver code.
- - Very basic driver code that do nothing.
+ - Very simple device driver code that do nothing.
 ```
 /* __your_driver_name.c */
 #include <linux/init.h>
@@ -64,14 +62,16 @@ clean:
 
 endif
 ```
- - Now we can build the driver. Note that you should not just type make. You should tell them which cross-compiler to use.
+ - Now we can build the driver.
+ - Note that you should not just type make. You should tell them which cross-compiler to use.
 ```
  - make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-
 ```
  - If everything works fine, then __your_driver_name.ko file will be generated at your working directory.
 
 5. Test driver.
- - Move your ko file to device. I will use scp to move file as my deivce is connected with LAN.
+ - Move your ko file to device.
+ - In this post, I will use scp to move file as my deivce is connected with LAN.
  ```
  - scp __your_driver_name.ko root@192.168.1.105:~/
  ```
