@@ -14,7 +14,7 @@ let socket = match UdpSocket::bind("127.0.0.1:44221") {
     Ok(socket) => socket,
     Err(error) => {
         println!("Can't bind socket: {:?}", error)
-        process.exit(1);
+        process::exit(1);
     }
 };
 ```
