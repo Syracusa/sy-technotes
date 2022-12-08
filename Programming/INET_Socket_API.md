@@ -1,5 +1,6 @@
 INET Socket API
 ========
+***
 
 UDP API call flow
 --------
@@ -14,11 +15,12 @@ TCP API call flow
  socket() -> bind() -> listen() -> accept() -> read()/write()
 + Client Side
  socket() -> connect() -> read()/write()
-
-API
+***
+API Detail
 --------
+***
 ### sys/socket.h
-
+***
 #### socket()
   int socket(int domain, int type, int protocol)
 ##### Parameter
@@ -37,7 +39,7 @@ API
  + Socket file descriptor 
  + -1 if failed
 
-## bind()
+#### bind()
  + 
 
 #### sendto()
@@ -49,5 +51,13 @@ API
 4. int flags
 5. const sockaddr \*addr
 6. socklen_t addr_len
-## setsockopt()
+
+#### setsockopt()
  + int setsockopt()
+##### Parameter
+
+##### Return
+
+***
+### arpa/inet.h
+***
