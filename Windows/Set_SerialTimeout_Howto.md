@@ -40,3 +40,15 @@ typedef struct _COMMTIMEOUTS {
 
 ### WriteTotalTimeoutConstant
 + Total timeout for write operation would be WriteTotalTimeoutMultiplier * bytestowrite) + WriteTotalTimeoutConstant
+
+
+
+## NONBLOCKING Read
+```
+    COMMTIMEOUTS timeouts = { 0 };
+    timeouts.ReadIntervalTimeout = MAXDWORD;
+    timeouts.ReadTotalTimeoutMultiplier = 0;
+    timeouts.ReadTotalTimeoutConstant = 0; /* Nonblock */
+    timeouts.WriteTotalTimeoutMultiplier = 0;
+    timeouts.WriteTotalTimeoutConstant = 100; /* 100ms block */
+```
