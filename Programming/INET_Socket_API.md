@@ -15,12 +15,33 @@ TCP API call flow
  socket() -> bind() -> listen() -> accept() -> read()/write()
 + Client Side
  socket() -> connect() -> read()/write()
+
+
+--------
+
+```
+socket() -> int fd
+char* ip -> inet_pton() -> struct in_addr_t
+int port -> htons() -> in_port_t
+
+in_addr_t -> sockaddr_in
+in_port_t -> sockaddr_in
+
+struct sockaddr_in -> sendto()
+int fd -> sendto()
+```
+
 ***
 API Detail
 --------
 ***
 ### sys/socket.h
 ***
+#### struct sockaddr_in
+ + in_port_t sin_port; 
+Port number in network byte order
+ + struct in_addr sin_addr;
+
 #### socket()
   int socket(int domain, int type, int protocol)
 ##### Parameter
