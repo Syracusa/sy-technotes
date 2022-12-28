@@ -4,7 +4,7 @@ union(arr1, arr2);
 ```
 
 # Dict
-+ Check if key exist
++ Check if key exists
 ```
 if ('mykey' in mydict) {
     /* Do something */
