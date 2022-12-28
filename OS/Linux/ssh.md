@@ -1,24 +1,26 @@
-# SSH Connection Troubleshooting
+# SSH Connection 
+## Troubleshooting
 
-## Check network connection
+### Check network connection
 ping {IP}
 
-## Check if ssh service working
+### Check if ssh service working
 sudo service ssh status
 
-## Check ssh port
+### Check ssh port
 cat /etc/ssh/sshd_config
 sudo lsof -i:22
 
-## Try self-connecting
+### Try self-connecting
 ssh localhost
 
-## Check log
+### Check log
 cat /var/log/auth.log
 
-# Start sshd on startup
+## Howto
+### Start sshd on startup
 systemctl start sshd
 
-# Register public key
+### Register public key
 nano ~/.ssh/authorized_keys
 sudo service ssh restart
