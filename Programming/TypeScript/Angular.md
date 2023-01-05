@@ -2,6 +2,20 @@
 sudo npm install -g @angular/cli
 
 
+# Import JSON
++ tsconfig.json
+```
+--- omitted ---
+  "compilerOptions": {
+    "resolveJsonModule": true, 
+    "allowSyntheticDefaultImports" : true,
+--- omitted ---
+```
++ ts file
+```
+import DataInfo from '../assets/datainfo.json';
+```
+
 # Create Project
 ng new {prj-name}
 
