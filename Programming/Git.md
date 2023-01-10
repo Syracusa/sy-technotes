@@ -10,4 +10,8 @@ https://stackoverflow.com/questions/20929336/git-submodule-add-a-git-directory-i
 
 
 # Checkout to remote branch
-+ git switch <branch_name>
+```
+git fetch origin
+git checkout --track origin/<remote_branch_name>
+
+```
