@@ -15,6 +15,11 @@
  cd linux
  git checkout 4.19.94-ti-r42 # Checkout to your device's kernel version
  ```
+ - Build kernel to generate some headers
+ ```
+ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- bb.org_defconfig
+ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- LOADADDR=0x80000000 uImage dtbs
+ ```
 
 ## 2. Install cross-compiler. 
  - Embedded device like beaglebone black, is mostly not use same architecture of your PC. The binary is required to compiled by their architecture specific compiler.
