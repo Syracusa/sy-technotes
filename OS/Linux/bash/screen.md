@@ -10,3 +10,10 @@ screen -S {screen_name} -X stuff $'{command}\r'&
 
 + Kill process
 pkill -9 {process_name}
+
++ Scrollback option
+```
+ctrl + A 
+:
+scrollback 30000
+```
