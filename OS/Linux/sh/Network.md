@@ -1,4 +1,9 @@
-# Set static ip
+# Tcpdump cheatsheet
++ UDP
+  + sudo tcpdump -i eth0 src 192.168.4.40
+
+
+# Set static ip(Ubuntu)
 + ref : https://www.tecmint.com/set-add-static-ip-address-in-linux/
 ```
 vi /etc/network/interfaces
@@ -24,3 +29,5 @@ sudo netstat -ap | grep :8764
 
 sudo pkill -9 python3
 ```
+
+# Check Firewall

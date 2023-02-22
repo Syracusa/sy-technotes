@@ -14,5 +14,5 @@ add_link_options(-lcap)
 # Fix
 + Add C Flag Option
 ```
--Wno-stringop-truncation -Wno-warning-format-truncation
+-Wno-stringop-truncation -Wno-format-truncation
 ```
