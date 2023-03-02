@@ -1,12 +1,2 @@
-# sy-techtips
-# Content
-## C-Development
- - HOWTO_Write_your_own_c_library
-## linux
- - HW_Layer.md
-### bash
-- screen.md
-### device-driver
-- HOWTO_make_embedded_device_driver.md
-## Gstremaer
-- debug.md
+# sy-technotes
++ My memos for various development trial.

@@ -36,10 +36,9 @@ make
 
 ```
 
-
-
 # Link with static library
-
+add_executable(testapp testapp.c)
+target_link_libraries(testapp ${CMAKE_SOURCE_DIR}/testlib.a)
 
 # Define git time macro
 ```
@@ -48,6 +47,9 @@ message("GIT_DATE:" ${GIT_DATE})
 add_definitions(-D__GIT_DATE__="${GIT_DATE}")
 ```
 
+# Use Sanitizer
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=thread")
 
 # CMake with toolchain file
 ```
