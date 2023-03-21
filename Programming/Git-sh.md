@@ -1,5 +1,5 @@
 # Add submodule
-git submodule add https://github.com/Syracusa/bbb-dd-examples /projects/bbb-dd-examples
+git submodule add https://github.com/Syracusa/bbb-dd-examples ./projects/bbb-dd-examples
 
 # check ignore
 git check-ignore -v path/to/check
