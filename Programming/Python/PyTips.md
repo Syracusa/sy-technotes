@@ -50,3 +50,12 @@ import subprocess
 command = "ls -al"
 process = subprocess.run(command, shell=True, check=True, text=True)
 ```
+
+## String to Bytes
+
+```
+def string_to_bytes(s):
+    b = bytearray()
+    b.extend(s.encode())
+    return b
+```
