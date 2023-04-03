@@ -41,3 +41,12 @@ for d in directories:
 for root, dirs, files in os.walk(os.path.join(path, reponame), topdown=True):
     pass
 ```
+
+
+## Execute CLI command
+```
+import subprocess
+
+command = "ls -al"
+process = subprocess.run(command, shell=True, check=True, text=True)
+```
