@@ -52,10 +52,18 @@ process = subprocess.run(command, shell=True, check=True, text=True)
 ```
 
 ## String to Bytes
-
 ```
 def string_to_bytes(s):
     b = bytearray()
     b.extend(s.encode())
     return b
+```
+
+## LZMA Compress
+```py
+import lzma
+compresser = lzma.LZMACompressor(format=lzma.FORMAT_ALONE)
+compressed = compressor.compress(buf)
+compressed += compressor.flush()
+decompressed = lzma.LZMADecompressor(format=lzma.FORMAT_ALONE).decompress(compressed)
 ```
