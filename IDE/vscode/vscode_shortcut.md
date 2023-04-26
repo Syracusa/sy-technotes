@@ -22,7 +22,10 @@
 - Shifh+PgUP  => Page Scrool Up
 
 ## Search
- -  Alt + Enter => Copy search result to editor
+-  Alt + Enter => Copy search result to editor
+
+## Replace
+- F2 => Rename symbol
 
 
 # Chrome
