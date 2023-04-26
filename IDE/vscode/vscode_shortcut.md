@@ -2,6 +2,7 @@
 ## Common
 - Ctrl+P  => Find File(@ with Symbol)
 - Ctrl+Shift+P => Find Config
+- Alt-z => Toggle word wrap
 
 ## Editor
 - Ctrl+W  => Close Editor
