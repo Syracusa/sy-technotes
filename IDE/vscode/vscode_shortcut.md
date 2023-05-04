@@ -28,7 +28,6 @@
 ## Replace
 - F2 => Rename symbol
 
-
 # Chrome
 Alt+PgDown/Up  => Move Next/Prive Tab
 F6  => Focus AddressTextbox
