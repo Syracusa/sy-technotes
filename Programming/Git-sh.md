@@ -15,3 +15,5 @@ git fetch origin
 git checkout --track origin/<remote_branch_name>
 
 ```
+# Deal with corrupted git objects
++ https://stackoverflow.com/questions/4111728/how-do-i-deal-with-corrupted-git-object-files
