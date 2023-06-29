@@ -14,3 +14,10 @@ add_link_options(-lcap)
 ```
 -Wno-stringop-truncation -Wno-format-truncation
 ```
+
+
+# identifier "sigset_t" is undefined
+# identifier "SIG_BLOCK" is undefined
+## Fix
++ Add `#define _GNU_SOURCE` before including any other headers.
++ ref : https://github.com/microsoft/vscode-cpptools/issues/2782
