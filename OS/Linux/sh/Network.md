@@ -21,7 +21,9 @@ iface eth0 inet static
 
 
 # Close program that hold some network port
++ Prerequisite =>  $ sudo apt install net-tools
 ```
+
 sudo netstat -ap | grep :8764
 
 > tcp        3      0 0.0.0.0:8764            0.0.0.0:*
