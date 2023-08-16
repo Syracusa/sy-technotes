@@ -86,3 +86,44 @@ const entity = viewer.entities.add({
 });
 ```
 
+
+# Make Pillar Entity
+```js
+function createPillar(viewer, lon, lat, height, fromGround, radius, color, alpha) {
+
+const longitude = 127.12; 
+const latitude = 34.34;
+const height = 1000;
+const fromGround = 100;
+const radius = 1000;
+const color = Cesium.Color.fromCssColorString('#123456');
+const alpha = 0.5;
+
+const entity = viewer.entities.add({
+    position: Cesium.Cartesian3.fromDegrees(
+        longitude, latitude, height / 2 + fromGround),
+    cylinder: {
+        length: height,
+        topRadius: radius,
+        bottomRadius: radius,
+        material: color.withAlpha(alpha),
+    },
+});
+
+```
+
+# Line Between Two Position
+```js
+const p1 = Cesium.Cartesian3.fromDegrees(longitude1, latitude1, height1);
+const p2 = Cesium.Cartesian3.fromDegrees(longitude2, latitude2, height2);
+const color = Cesium.Color.RED.withAlpha(0.5);
+const width = 5;
+
+const polyline = viewer.entities.add({
+    polyline: {
+        positions: [p1, p2],
+        width: width,
+        material: color,
+    }
+});
+```
