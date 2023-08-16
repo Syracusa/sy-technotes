@@ -80,6 +80,40 @@ const polylinePrimitive = viewer.scene.primitives.add(new Cesium.Primitive({
 
 ```
 
++ Create Polygon Primitive
+```js
+const positions = [
+    127.20, 34.60,
+    127.20, 34.61,
+    127.21, 34.61,
+];
+const fromGround = 0;
+const height = 1000;
+const color = Cisium.Color.WHITE;
+const alpha = 0.5;
+
+const polygonGeometry = new Cesium.PolygonGeometry({
+    polygonHierarchy: new Cesium.PolygonHierarchy(
+        Cesium.Cartesian3.fromDegreesArray(positions)
+    ),
+    height: height + fromGround,
+    extrudedHeight: fromGround,
+});
+
+const polygonGeometryInstance = new Cesium.GeometryInstance({
+    geometry: polygonGeometry,
+    attributes: {
+        color: Cesium.ColorGeometryInstanceAttribute.fromColor(color.withAlpha(alpha)),
+    }
+});
+
+const polygonPrimitive = viewer.scene.primitives.add(new Cesium.Primitive({
+    geometryInstances: [polygonGeometryInstance],
+    appearance: new Cesium.PerInstanceColorAppearance(),
+    allowPicking: false
+}));
+```
+
 # Delete Primitives
 ```js
 viewr.scene.primitives.remove(primitive);
